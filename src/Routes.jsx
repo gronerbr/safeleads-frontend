@@ -1,20 +1,22 @@
 import React from 'react'
-import { Route } from 'react-router'
+import {
+  Route,
+  Switch
+} from 'react-router-dom'
 import { ConnectedRouter } from 'react-router-redux'
-import createHistory from 'history/createBrowserHistory'
 
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 
-const history = createHistory()
+const getHistory = (history) => {
+  return (
+    <ConnectedRouter history={history}>
+      <Switch>
+        <Route exact path="/" component={Home}/>
+        <Route path="/about" component={About}/>
+      </Switch>
+    </ConnectedRouter>
+  )
+}
 
-const Routes = () => (
-  <ConnectedRouter history={history}>
-    <div>
-      <Route exact path="/" component={Home}/>
-      <Route path="/about" component={About}/>
-    </div>
-  </ConnectedRouter>
-)
-
-export default Routes
+export default getHistory

@@ -16,7 +16,8 @@
   "env": {
     "browser": true,
     "mocha": true,
-    "node": true
+    "node": true,
+    "es6": true
   },
   "rules": {
     "valid-jsdoc": 2,
@@ -26,7 +27,15 @@
     "react/no-string-refs": 0,
     "semi": ["error", "never"],
     "comma-dangle": ["error", "never"],
-    "comma-style": ["error", "last"]
+    "comma-style": ["error", "last"],
+    "no-console": 1
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    }
   },
   "plugins": [
     "import",
