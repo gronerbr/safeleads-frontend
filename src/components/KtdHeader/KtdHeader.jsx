@@ -1,4 +1,7 @@
 import React, { PureComponent } from 'react'
+import {
+  Button
+} from 'react-bootstrap'
 
 class KtdHeader extends PureComponent {
 
@@ -6,6 +9,7 @@ class KtdHeader extends PureComponent {
     return (
       <header>
         <h2>Great header!</h2>
+        <Button>Button</Button>
       </header>
     )
   }
