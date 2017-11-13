@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 
 const Example = () => {
@@ -6,7 +6,7 @@ const Example = () => {
         <div>
             <p>It's an example of React component</p>
         </div>
-    );
+    )
 }
 
-export default Example;
+export default Example

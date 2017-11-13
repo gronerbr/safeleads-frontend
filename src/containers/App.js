@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import logo from './logo.svg'
+import './App.scss'
 import Example from '../components/Example/Example'
 
 class App extends Component {
@@ -13,8 +13,8 @@ class App extends Component {
         </header>
         <Example />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
