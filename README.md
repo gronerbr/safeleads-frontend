@@ -2,7 +2,7 @@
 
 ### Tecnologias:
 
- - React 16 (caso aconteça algum problema podemos dar o downgrade),
+ - React 16+
  - Redux
  - Redux Thunk
  - Redux Logger
@@ -22,17 +22,18 @@
  - Postcss
  - Postcss plugin autoprefixer
  - Postcss plugin media queries
- - Utilizar create-react-app pelo menos para o primeiro build
+ - Build inicial feito utilizando `create-react-app`
  - Path resolver (Webpack)
 
 ### Instruções gerais, paradigmas e boas práticas a serem implementadas:
 
-  - Build com npm install antes, tipo `"build":"yarn install && node scripts/build.js"`
-  - Criar uma task de build para homolog que já rode o serve e abra o browser, de forma que nos lembre de testar.
+  - A task de build instala todas as dependências primeiro, faz o build em si, depois serve o conteúdo estático no navegador, para que seja possĩvel um teste simples do build final.
+  - Sempre desenvolver com os testes rodando em outra instância do terminal: `yarn test`
   - Master do git travada (após concluirmos o desenvolvimento dele)
-  - Redux duck
+  - Conceito do [Redux duck](https://github.com/PlatziDev/redux-duck)
   - Container components separados de presentation components
-  - Utilizar nova forma de workflow no Git (tag, rebase, releases, develop, etc).
-  - Components vs PureComponents (PureComponents vs Functional)
-  - Usar Yarn
-  - Travar versão do node
+  - Utilizar nova forma de workflow no Git (tag, rebase, releases, develop, etc)
+  - Se atentar ao uso de Components, PureComponents, FunctionalComponents
+  - Sempre utilizar [Yarn](https://yarnpkg.com/pt-br/)
+  - Versão do node especificada no .nvmrc e no package.json (node 8.x.x)
+  - Sempre que possĩvel manter as dependências atualizadas
