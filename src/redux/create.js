@@ -6,7 +6,11 @@ import reducer from './modules/reducer';
 export default function createStore() {
   const middleware = [thunk, logger];
   const finalCreateStore = applyMiddleware(...middleware)(_createStore);
-  const store = finalCreateStore(reducer);
+  const store = finalCreateStore(
+    reducer,
+    // eslint-disable-next-line
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  );
 
   if (module.hot) {
     module.hot.accept('./modules/reducer', () => {
