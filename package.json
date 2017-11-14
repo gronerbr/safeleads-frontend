@@ -58,6 +58,9 @@
     "build": "yarn && node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
+  "engines": {
+    "node": "8.x.x"
+  },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
