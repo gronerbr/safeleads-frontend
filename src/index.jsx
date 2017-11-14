@@ -3,6 +3,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import App from './containers/App/App';
 import createStore from './redux/create';
 
@@ -14,7 +15,9 @@ const store = createStore();
 render(
   <Provider store={store} key="provider">
     <AppContainer>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </AppContainer>
   </Provider>,
   document.getElementById('root'),
