@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div>
+  <p>
+    It
+    '
+    s an example of React component. You can navigate to  
+    <a
+      href="/counter"
+      onClick={[Function]}
+    >
+      Counter
+    </a>
+      to see another page.
+  </p>
+</div>
+`;

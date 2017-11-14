@@ -1,17 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import renderer from 'react-test-renderer';
 import App from './App';
 import createStore from '../../redux/create';
 
 const store = createStore();
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(
-    <Provider store={store} key="provider">
+test('renders without crashing', () => {
+  const component = renderer.create(<Provider store={store} key="provider">
+    <MemoryRouter location="someLocation" context={{}}>
       <App />
-    </Provider>,
-    div,
-  );
+    </MemoryRouter>
+  </Provider>);
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });
