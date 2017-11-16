@@ -1,0 +1,9 @@
+{
+    "presets": [
+        "react-app",
+        "latest"
+    ],
+    "plugins": [
+        "transform-class-properties"
+    ]
+}

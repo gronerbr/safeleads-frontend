@@ -1,5 +1,6 @@
 {
   "extends": "airbnb",
+  "parser": "babel-eslint",
   "env": {
     "browser": true,
     "jest": true
@@ -21,6 +22,10 @@
           "preferButton"
         ]
       }
-    ]
+    ],
+    "class-methods-use-this": "off",
+    "import/no-named-as-default": 0,
+    "import/no-named-as-default-member": 0,
+    "arrow-body-style": 0
   }
 }

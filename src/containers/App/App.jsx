@@ -5,6 +5,10 @@ import style from './App.scss';
 import Routes from '../Routes/Routes';
 
 class App extends Component {
+  renderTestMessage = () => {
+    return 'This project accepts arrow function in classes';
+  }
+
   render() {
     return (
       <div className={style.App} ref={1}>
@@ -13,6 +17,7 @@ class App extends Component {
           <h1 className={style['App-title']}>Hello React World</h1>
         </header>
         <main>
+          {this.renderTestMessage()}
           <Routes />
         </main>
       </div>
