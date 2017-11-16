@@ -6,10 +6,11 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import App from './containers/App/App';
 import createStore from './redux/create';
-
+import GA from './utils/ga';
 import registerServiceWorker from './registerServiceWorker';
 
 registerServiceWorker();
+GA.init();
 const store = createStore();
 
 render(

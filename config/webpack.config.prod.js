@@ -280,6 +280,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       template: paths.appHtml,
+      env: {
+        Prod: true,
+        Dev: false,
+      },
       minify: {
         removeComments: true,
         collapseWhitespace: true,
