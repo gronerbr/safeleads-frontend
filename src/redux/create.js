@@ -4,13 +4,15 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import createHistory from 'history/createBrowserHistory';
 import reducer from './modules/reducer';
+import gaRouter from '../redux/middleware/ga-router';
 
 export const history = createHistory();
 
 const router = routerMiddleware(history);
+const gaRouterWithUA = gaRouter(process.env.REACT_APP_GA_UA);
 
 export default function createStore() {
-  const middleware = [thunk, logger, router];
+  const middleware = [thunk, logger, router, gaRouterWithUA];
   const finalCreateStore = applyMiddleware(...middleware)(_createStore);
   const store = finalCreateStore(
     reducer,

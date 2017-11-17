@@ -1,16 +1,14 @@
-const GA_ID = process.env.REACT_APP_GA_UA || '';
-
 const GA = {
-  init: () => {
+  init: (UA) => {
     /**
-     * GA code from 16/11/2017.
+     * GA code from 17/11/2017.
      * Always check if this has been modified
      */
     window.dataLayer = window.dataLayer || [];
     // eslint-disable-next-line
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', GA_ID);
+    window.gtag = function() { dataLayer.push(arguments); }
+    window.gtag('js', new Date());
+    window.gtag('config', UA);
     /* End of GA code */
   },
 };

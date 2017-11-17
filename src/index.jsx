@@ -10,7 +10,9 @@ import GA from './utils/ga';
 import registerServiceWorker from './registerServiceWorker';
 
 registerServiceWorker();
-GA.init();
+
+GA.init(process.env.REACT_APP_GA_UA);
+
 const store = createStore();
 
 render(

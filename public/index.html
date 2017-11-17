@@ -30,9 +30,7 @@
       TAG to load Google Analytics.
       This tag will be loaded only in production environment
     -->
-    <% if (htmlWebpackPlugin.options.env.Prod){ %>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=%GA_ID%"></script>
-    <% } %>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=%REACT_APP_GA_UA%"></script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
