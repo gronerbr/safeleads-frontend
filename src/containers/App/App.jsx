@@ -28,6 +28,7 @@ class App extends Component {
 
   render() {
     if (this.state.hasError) {
+      // eslint-disable-next-line
       console.error('THERE\'S AN ERROR IN APPLICATION, PLEASE FIX IT!');
     }
 

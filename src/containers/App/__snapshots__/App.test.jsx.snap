@@ -19,6 +19,7 @@ exports[`renders without crashing 1`] = `
     </h1>
   </header>
   <main>
+    This project accepts arrow function in classes
     <div>
       <p>
         It

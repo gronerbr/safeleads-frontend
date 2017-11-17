@@ -1,20 +1,21 @@
-const INCREMENT = 'boilerplate/INCREMENT';
-const DECREMENT = 'boilerplate/DECREMENT';
+export const INCREMENT = 'boilerplate/INCREMENT';
+export const DECREMENT = 'boilerplate/DECREMENT';
 
 const defaultState = {
   total: 0,
 };
 
-export default function reducer(state = defaultState, action) {
+const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case INCREMENT:
+      // eslint-disable-next-line
       return { ...state, total: state.total + 1 };
     case DECREMENT:
       return { ...state, total: state.total - 1 };
     default:
       return state;
   }
-}
+};
 
 export const decrement = () => ({
   type: DECREMENT,
@@ -29,3 +30,5 @@ export const decrementAsync = () => (dispatch) => {
 export const increment = () => ({
   type: INCREMENT,
 });
+
+export default reducer;

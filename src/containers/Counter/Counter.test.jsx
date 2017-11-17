@@ -1,15 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Counter from './Counter';
+import createStore from '../../redux/create';
 
-const props = {
-  increment: () => {},
-  decrement: () => {},
-  decrementAsync: () => {},
-  total: 0,
-};
+const store = createStore();
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Counter props={props} />, div);
+  ReactDOM.render(<Counter store={store} />, div);
 });

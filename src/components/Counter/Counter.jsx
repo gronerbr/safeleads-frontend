@@ -11,16 +11,13 @@ const Counter = props => (
 );
 
 Counter.defaultProps = {
-  increment: () => {},
-  decrement: () => {},
-  decrementAsync: () => {},
   total: 0,
 };
 
 Counter.propTypes = {
-  decrement: PropTypes.func,
-  increment: PropTypes.func,
-  decrementAsync: PropTypes.func,
+  decrement: PropTypes.func.isRequired,
+  increment: PropTypes.func.isRequired,
+  decrementAsync: PropTypes.func.isRequired,
   total: PropTypes.number,
 };
 
