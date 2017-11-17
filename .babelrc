@@ -1,7 +1,7 @@
 {
     "presets": [
         "react-app",
-        "latest"
+        "env"
     ],
     "plugins": [
         "transform-class-properties"
