@@ -191,6 +191,7 @@ module.exports = {
                       ident: 'postcss',
                       plugins: () => [
                         require('postcss-flexbugs-fixes'),
+                        require("css-mqpacker"),
                         autoprefixer({
                           browsers: [
                             '>1%',
@@ -234,6 +235,7 @@ module.exports = {
                   ident: 'postcss',
                   plugins: () => [
                     require('postcss-flexbugs-fixes'),
+                    require("css-mqpacker"),
                     autoprefixer({
                       browsers: [
                         '>1%',
