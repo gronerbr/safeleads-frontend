@@ -39,7 +39,7 @@
   - Sempre que possível manter as dependências atualizadas
 
   ### Analytics
-  - Para configurar o Google Analytics, basta modificar inserir o ID na variável `GA_ID` no arquivo [src/utils/ga.js](https://github.com/Kitado/kitado-spa-boilerplate/blob/master/src/utils/ga.js).
+  - Para configurar o Google Analytics, basta modificar inserir o ID na variável `REACT_APP_GA_UA` no arquivo [src/.env](https://github.com/Kitado/kitado-spa-boilerplate/blob/master/src/.env).
   - Para descobrir ID do GA, vá em `Administrador > Informações de acompanhamento > Código de acompanhamento`, e copie o código que está nesse formato: **UA-000000000-0**.
   - O código de acompanhamento atual foi criado em 16/11/2017. Se o Google modificar esse script padrão, será preciso editar esse arquivo. Caso contrário não será necessário nenhuma outra modificação.
 

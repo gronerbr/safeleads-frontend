@@ -3,7 +3,6 @@
 const fs = require('fs');
 const path = require('path');
 const paths = require('./paths');
-const ga = require('../src/utils/ga');
 
 // Make sure that including paths.js after env.js will read .env variables.
 delete require.cache[require.resolve('./paths')];
@@ -11,13 +10,6 @@ delete require.cache[require.resolve('./paths')];
 const NODE_ENV = process.env.NODE_ENV;
 if (!NODE_ENV) {
   throw new Error('The NODE_ENV environment variable is required but was not specified.');
-}
-
-if (NODE_ENV === 'production' && (!ga.id)) {
-  const GAMessage = 'Google Analytcs is required, but was not specified. Configure it on src/utils/ga.js';
-
-  console.log('\x1b[31m', GAMessage);
-  throw new Error(GAMessage);
 }
 
 // https://github.com/bkeepers/dotenv#what-other-env-files-can-i-use
@@ -42,6 +34,13 @@ dotenvFiles.forEach((dotenvFile) => {
     });
   }
 });
+
+if (NODE_ENV === 'production' && (!process.env.REACT_APP_GA_UA)) {
+  const GAMessage = 'Google Analytcs is required, but was not specified. Configure it on src/utils/ga.js';
+
+  console.log('\x1b[31m', GAMessage);
+  throw new Error(GAMessage);
+}
 
 // We support resolving modules according to `NODE_PATH`.
 // This lets you use absolute paths in imports inside large monorepos:
@@ -80,7 +79,7 @@ function getClientEnvironment(publicUrl) {
         // This should only be used as an escape hatch. Normally you would put
         // images into the `src` and `import` them in code to get their paths.
         PUBLIC_URL: publicUrl,
-        GA_ID: ga.id,
+        GA_ID: process.env.REACT_APP_GA_UA,
       },
     );
   // Stringify all values so we can feed into Webpack DefinePlugin

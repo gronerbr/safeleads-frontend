@@ -1,8 +1,4 @@
-/**
- * PASTE GA ID BELOW
- * (How to find: https://www.googletagmanager.com/gtag/js?id=THIS_IS_THE_GA_ID)
- */
-const GA_ID = '';
+const GA_ID = process.env.REACT_APP_GA_UA || '';
 
 const GA = {
   init: () => {
@@ -17,7 +13,6 @@ const GA = {
     gtag('config', GA_ID);
     /* End of GA code */
   },
-  id: GA_ID,
 };
 
 module.exports = GA;
