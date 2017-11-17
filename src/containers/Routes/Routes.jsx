@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import {
+  Route,
+  Switch,
+  Redirect,
+} from 'react-router-dom';
+import { ConnectedRouter } from 'react-router-redux';
 import {
   HOME,
   COUNTER,
 } from '../../utils/routeMap';
+import { history } from '../../redux/create';
 import Example from '../../components/Example/Example';
 import Counter from '../../containers/Counter/Counter';
 
@@ -11,12 +17,14 @@ import Counter from '../../containers/Counter/Counter';
 class Routes extends Component {
   render() {
     return (
-      <Switch>
-        <Route exact path={HOME} component={Example} />
-        <Route exact path={COUNTER} component={Counter} />
-        {/* Route fallback */}
-        <Redirect to={HOME} />
-      </Switch>
+      <ConnectedRouter history={history}>
+        <Switch>
+          <Route exact path={HOME} component={Example} />
+          <Route exact path={COUNTER} component={Counter} />
+          {/* Route fallback */}
+          <Redirect to={HOME} />
+        </Switch>
+      </ConnectedRouter>
     );
   }
 }
