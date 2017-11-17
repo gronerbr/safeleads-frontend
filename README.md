@@ -45,5 +45,6 @@
 
   ### Build final
   - `yarn build`
-  - O comando do build reinstala todas as dependências, faz o build, e roda um servidor local no browser, para um teste rápido do build.
+  - O comando do build reinstala todas as dependências, roda os testes, faz o build, e roda um servidor local no browser, para um teste rápido do build.
   - É obrigatório que o Google Analytics esteja habilitado para o build final.
+  - É obrigatório que os testes estejam OK para o build final.
