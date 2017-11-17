@@ -37,3 +37,13 @@
   - Sempre utilizar [Yarn](https://yarnpkg.com/pt-br/)
   - Versão do node especificada no .nvmrc e no package.json (node 8.x.x)
   - Sempre que possível manter as dependências atualizadas
+
+  ### Analytics
+  - Para configurar o Google Analytics, basta modificar inserir o ID na variável `GA_ID` no arquivo [src/utils/ga.js](https://github.com/Kitado/kitado-spa-boilerplate/blob/master/src/utils/ga.js).
+  - Para descobrir ID do GA, vá em `Administrador > Informações de acompanhamento > Código de acompanhamento`, e copie o código que está nesse formato: **UA-000000000-0**.
+  - O código de acompanhamento atual foi criado em 16/11/2017. Se o Google modificar esse script padrão, será preciso editar esse arquivo. Caso contrário não será necessário nenhuma outra modificação.
+
+  ### Build final
+  - `yarn build`
+  - O comando do build reinstala todas as dependências, faz o build, e roda um servidor local no browser, para um teste rápido do build.
+  - É obrigatório que o Google Analytics esteja habilitado para o build final.
