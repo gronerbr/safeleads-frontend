@@ -67,7 +67,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "yarn && node scripts/build.js && yarn http-server build -o",
+    "build": "yarn && yarn test && node scripts/build.js && yarn http-server build -o",
     "test": "node scripts/test.js --env=jsdom"
   },
   "engines": {
