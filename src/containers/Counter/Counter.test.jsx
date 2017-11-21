@@ -1,11 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import renderer from 'react-test-renderer';
+import { MemoryRouter } from 'react-router-dom';
 import Counter from './Counter';
 import createStore from '../../redux/create';
 
 const store = createStore();
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<Counter store={store} />, div);
+test('renders without crashing', () => {
+  const component = renderer.create(
+    <MemoryRouter location="someLocation" context={{}}>
+      <Counter store={store} />
+    </MemoryRouter>);
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });
