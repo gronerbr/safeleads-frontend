@@ -35,7 +35,7 @@ dotenvFiles.forEach((dotenvFile) => {
   }
 });
 
-if (NODE_ENV === 'production' && (!process.env.REACT_APP_GA_UA)) {
+if (NODE_ENV === 'production' && (!process.env.REACT_APP_GA_UA_PROJECT || !process.env.REACT_APP_GA_UA_BLU365)) {
   const GAMessage = 'Google Analytcs is required, but was not specified. Configure it on src/utils/ga.js';
 
   console.log('\x1b[31m', GAMessage);
@@ -79,7 +79,8 @@ function getClientEnvironment(publicUrl) {
         // This should only be used as an escape hatch. Normally you would put
         // images into the `src` and `import` them in code to get their paths.
         PUBLIC_URL: publicUrl,
-        GA_ID: process.env.REACT_APP_GA_UA,
+        REACT_APP_GA_UA_BLU365: process.env.REACT_APP_GA_UA_BLU365,
+        REACT_APP_GA_UA_PROJECT: process.env.REACT_APP_GA_UA_PROJECT,
       },
     );
   // Stringify all values so we can feed into Webpack DefinePlugin
