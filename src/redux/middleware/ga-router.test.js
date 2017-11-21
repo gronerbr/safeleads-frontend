@@ -7,7 +7,7 @@ const create = () => {
   };
   const next = y => y;
 
-  const invoke = action => gaRouter('UA-MOCK-123456')(store)(next)(action);
+  const invoke = action => gaRouter(['UA-MOCK-123456'])(store)(next)(action);
 
   return { store, next, invoke };
 };

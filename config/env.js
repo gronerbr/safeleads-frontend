@@ -35,7 +35,7 @@ dotenvFiles.forEach((dotenvFile) => {
   }
 });
 
-if (NODE_ENV === 'production' && (!process.env.REACT_APP_GA_UA_PROJECT || !process.env.REACT_APP_GA_UA_BLU365)) {
+if (NODE_ENV === 'production' && (!process.env.REACT_APP_GA_UA_BLU365)) {
   const GAMessage = 'Google Analytcs is required, but was not specified. Configure it on src/utils/ga.js';
 
   console.log('\x1b[31m', GAMessage);

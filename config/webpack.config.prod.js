@@ -283,6 +283,8 @@ module.exports = {
       inject: true,
       template: paths.appHtml,
       env: {
+        REACT_APP_GA_UA_PROJECT: process.env.REACT_APP_GA_UA_PROJECT,
+        REACT_APP_GA_UA_BLU365: process.env.REACT_APP_GA_UA_BLU365,
         Prod: true,
         Dev: false,
       },

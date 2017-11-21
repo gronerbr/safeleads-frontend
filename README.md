@@ -39,7 +39,8 @@
   - Sempre que possível manter as dependências atualizadas
 
   ### Analytics
-  - Para configurar o Google Analytics, basta inserir os IDs nas variáveis `REACT_APP_GA_UA_BLU365` (Analytics global da Blu365), e `REACT_APP_GA_UA_PROJECT` (Analytics individual do projeto) no arquivo [src/.env](https://github.com/Kitado/kitado-spa-boilerplate/blob/master/src/.env).
+  - O Google Analytics da Blu365 já vem configurado por padrão na variável `REACT_APP_GA_UA_BLU365` no arquivo [src/.env]
+  - Para configurar o Google Analytics do projeto individualmente, basta inserir o UA-ID na variável `REACT_APP_GA_UA_PROJECT`, no mesmo arquivo [src/.env](https://github.com/Kitado/kitado-spa-boilerplate/blob/master/src/.env).
   - Para descobrir ID do GA, vá em `Administrador > Informações de acompanhamento > Código de acompanhamento`, e copie o código que está nesse formato: **UA-000000000-0**.
   - O código de acompanhamento atual foi criado em 16/11/2017. Se o Google modificar esse script padrão, será preciso editar esse arquivo. Caso contrário não será necessário nenhuma outra modificação.
 

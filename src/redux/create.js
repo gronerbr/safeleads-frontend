@@ -9,7 +9,10 @@ import gaRouter from '../redux/middleware/ga-router';
 export const history = createHistory();
 
 const router = routerMiddleware(history);
-const gaRouterWithUA = gaRouter(process.env.REACT_APP_GA_UA);
+const gaRouterWithUA = gaRouter([
+  process.env.REACT_APP_GA_UA_PROJECT,
+  process.env.REACT_APP_GA_UA_BLU365,
+]);
 
 export default function createStore() {
   const middleware = [thunk, logger, router, gaRouterWithUA];
