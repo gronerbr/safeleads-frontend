@@ -71,7 +71,7 @@
     "test": "node scripts/test.js --env=jsdom"
   },
   "engines": {
-    "node": "8.x.x"
+    "node": ">8.0.0"
   },
   "jest": {
     "collectCoverageFrom": [
