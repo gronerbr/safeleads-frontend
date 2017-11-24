@@ -15,7 +15,10 @@ const gaRouterWithUA = gaRouter([
 ]);
 
 export default function createStore() {
-  const middleware = [thunk, logger, router, gaRouterWithUA];
+  const middleware = [thunk, router, gaRouterWithUA];
+  if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test') {
+    middleware.push(logger);
+  }
   const finalCreateStore = applyMiddleware(...middleware)(_createStore);
   const store = finalCreateStore(
     reducer,
