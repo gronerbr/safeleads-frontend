@@ -16,7 +16,7 @@
  - Editorconfig
  - Nvmrc
  - Jest
- - ~~Enzyme~~ (Implementar se necessário)
+ - Enzyme
  - CSS Modules
  - Sass
  - Postcss
