@@ -7,11 +7,11 @@ const Example = () => (
     <p>
       It{"'"}s an example of React component.
       You can navigate to
-        &nbsp;
-        <Link to={COUNTER}>
-          Counter
-        </Link>
-        &nbsp;
+      &nbsp;
+      <Link to={COUNTER}>
+        Counter
+      </Link>
+      &nbsp;
       to see another page.
     </p>
   </div>
