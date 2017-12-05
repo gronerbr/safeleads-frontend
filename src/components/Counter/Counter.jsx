@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 const Counter = props => (
-  <div>
+  <Fragment>
     <h1>Total: {props.total}</h1>
     <button onClick={() => props.increment()}>Incrementar</button>
     <button onClick={() => props.decrement()}>Decrementar</button>
     <button onClick={() => props.decrementAsync()}>Decrementar assíncronamente</button>
-  </div>
+  </Fragment>
 );
 
 Counter.defaultProps = {
