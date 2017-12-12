@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import logo from './logo.svg';
 import style from './App.scss';
 import Routes from '../Routes/Routes';
 
@@ -22,10 +21,6 @@ class App extends Component {
     // logErrorToMyService(error, info);
   }
 
-  renderTestMessage = () => {
-    return 'This project accepts arrow function in classes';
-  }
-
   render() {
     if (this.state.hasError) {
       // eslint-disable-next-line
@@ -34,12 +29,7 @@ class App extends Component {
 
     return (
       <div className={style.App} ref={1}>
-        <header className={style['App-header']}>
-          <img src={logo} className={style['App-logo']} alt="logo" />
-          <h1 className={style['App-title']}>Hello React World</h1>
-        </header>
         <main>
-          {this.renderTestMessage()}
           <Routes />
         </main>
       </div>

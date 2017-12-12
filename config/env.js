@@ -81,7 +81,7 @@ function getClientEnvironment(publicUrl) {
         PUBLIC_URL: publicUrl,
         REACT_APP_GA_UA_BLU365: process.env.REACT_APP_GA_UA_BLU365,
         REACT_APP_GA_UA_PROJECT: process.env.REACT_APP_GA_UA_PROJECT,
-      },
+      }
     );
   // Stringify all values so we can feed into Webpack DefinePlugin
   const stringified = {

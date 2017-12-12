@@ -8,10 +8,11 @@ import { ConnectedRouter } from 'react-router-redux';
 import {
   HOME,
   COUNTER,
+  LOGIN,
 } from '../../utils/routeMap';
 import { history } from '../../redux/create';
-import Example from '../../components/Example/Example';
 import Counter from '../../containers/Counter/Counter';
+import Login from '../../containers/Login/Login';
 
 // eslint-disable-next-line
 class Routes extends Component {
@@ -19,10 +20,11 @@ class Routes extends Component {
     return (
       <ConnectedRouter history={history}>
         <Switch>
-          <Route exact path={HOME} component={Example} />
+          <Route exact path={HOME} component={Login} />
           <Route exact path={COUNTER} component={Counter} />
+          <Route exact path={LOGIN} component={Login} />
           {/* Route fallback */}
-          <Redirect to={HOME} />
+          <Redirect to={LOGIN} />
         </Switch>
       </ConnectedRouter>
     );
