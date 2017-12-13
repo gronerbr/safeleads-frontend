@@ -1,21 +1,19 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import styles from './login.scss';
+import logo from '../../img/logo.png';
 
-const Login = props => (
+const Login = () => (
   <Fragment>
-    <h1>Total: {props.total}</h1>
-    <form>
-      <input type="text" />
-    </form>
+    <div className={styles.login}>
+      <img src={logo} className={styles.logo} alt="logo safe leads" />
+      <form className={styles.login__form}>
+        <input type="text" />
+        <hr />
+        <input type="password" />
+        <button className={styles.login__button}>Login</button>
+      </form>
+    </div>
   </Fragment>
 );
-
-Login.defaultProps = {
-  total: 0,
-};
-
-Login.propTypes = {
-  total: PropTypes.number,
-};
 
 export default Login;
