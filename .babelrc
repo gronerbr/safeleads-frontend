@@ -1,0 +1,9 @@
+{
+    "presets": [
+        "react-app",
+        "env"
+    ],
+    "plugins": [
+        "transform-class-properties"
+    ]
+}

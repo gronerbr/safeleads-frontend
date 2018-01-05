@@ -1,0 +1,32 @@
+import 'react-hot-loader/patch';
+import React from 'react';
+import { render } from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import App from './containers/App/App';
+import createStore from './redux/create';
+import GA from './utils/ga';
+import registerServiceWorker from './registerServiceWorker';
+
+registerServiceWorker();
+
+GA.init(process.env.REACT_APP_GA_UA_BLU365);
+GA.init(process.env.REACT_APP_GA_UA_PROJECT);
+
+const store = createStore();
+
+render(
+  <Provider store={store} key="provider">
+    <AppContainer>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </AppContainer>
+  </Provider>,
+  document.getElementById('root'),
+);
+
+if (module.hot) {
+  module.hot.accept();
+}
