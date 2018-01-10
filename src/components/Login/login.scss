@@ -1,17 +1,64 @@
-.login{
-  width: 500px;
+.bg{
+  background-color: #01bdd6;
+  height: 100vh;
+}
+.card{
+  background-color: #fff;
+  width: 90%;
   margin: 0 auto;
-  margin-top: 60px;
+  position: relative;
+  top: 80px;
+  border-radius: 3px;
+  padding: 10px;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.3);
+  max-width: 330px;
+}
+.login{
+  margin: 0 auto;
+  margin-top: 10px;
 }
 .login__form{
   background-color: #fff;
   padding: 20px 15px;
-  margin-top: 30px;
+  margin-top: 10px;
+  text-align: left;
 }
-.login__button{
-  display: block;
-  margin: 0 0 0 auto;
+.inputWrapper{
+  hr:nth-child(1) {
+    border-bottom: 2px solid rgb(224, 224, 224) !important;
+  }
+  hr:nth-child(2) {
+    border-bottom: 3px solid #9202d3 !important;
+  }
+}
+.floatingLabelFocusStyle{
+  color: #000 !important;
+}
+.icon{
+  display: inline-block;
+  span{
+    margin: 0 10px 0 0;
+    font-size: 32px !important;
+    bottom: -10px;
+  }
 }
 .logo{
   width: 220px;
+}
+.enterBtn{
+  color: rgb(255, 255, 255);
+  display: block;
+  margin: 37px 0;
+  span {
+    color: #fff;
+    letter-spacing: 1px !important;
+  }
+  button{
+    width: 100%;
+  }
+}
+.forgotten {
+  color: #01bdd6;
+  font-weight: bolder;
+  text-decoration: none;
 }
