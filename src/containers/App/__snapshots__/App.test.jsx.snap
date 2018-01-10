@@ -34,14 +34,9 @@ exports[`renders without crashing 1`] = `
                   onMouseLeave={[Function]}
                   style={
                     Object {
-                      "MozTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "MozUserSelect": "none",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "WebkitUserSelect": "none",
                       "color": "rgba(0, 0, 0, 0.87)",
                       "display": "inline-block",
                       "fontSize": 24,
-                      "msUserSelect": "none",
                       "muiPrepared": true,
                       "position": "relative",
                       "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
@@ -56,8 +51,6 @@ exports[`renders without crashing 1`] = `
                 className={undefined}
                 style={
                   Object {
-                    "MozTransition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "WebkitTransition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                     "backgroundColor": "transparent",
                     "cursor": "auto",
                     "display": "inline-block",
@@ -74,21 +67,12 @@ exports[`renders without crashing 1`] = `
               >
                 <label
                   className={undefined}
-                  htmlFor="undefined-Digiteseulogin-Usurio-35002"
+                  htmlFor="undefined-Digiteseulogin-Usurio-42573"
                   onClick={undefined}
                   style={
                     Object {
-                      "MozTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "MozUserSelect": "none",
-                      "WebkitTransform": "scale(1) translate(0, 0)",
-                      "WebkitTransformOrigin": "left top",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "WebkitUserSelect": "none",
                       "color": "rgba(0, 0, 0, 0.3)",
                       "lineHeight": "22px",
-                      "msTransform": "scale(1) translate(0, 0)",
-                      "msTransformOrigin": "left top",
-                      "msUserSelect": "none",
                       "muiPrepared": true,
                       "pointerEvents": "none",
                       "position": "absolute",
@@ -106,8 +90,6 @@ exports[`renders without crashing 1`] = `
                 <div
                   style={
                     Object {
-                      "MozTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                       "bottom": 12,
                       "color": "rgba(0, 0, 0, 0.3)",
                       "muiPrepared": true,
@@ -121,15 +103,12 @@ exports[`renders without crashing 1`] = `
                 </div>
                 <input
                   disabled={false}
-                  id="undefined-Digiteseulogin-Usurio-35002"
+                  id="undefined-Digiteseulogin-Usurio-42573"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
                   style={
                     Object {
-                      "MozAppearance": "textfield",
-                      "MozBoxSizing": "border-box",
-                      "WebkitAppearance": "textfield",
                       "WebkitOpacity": 1,
                       "WebkitTapHighlightColor": "rgba(0,0,0,0)",
                       "appearance": "textfield",
@@ -155,7 +134,6 @@ exports[`renders without crashing 1`] = `
                     aria-hidden="true"
                     style={
                       Object {
-                        "MozBoxSizing": "content-box",
                         "borderBottomStyle": "solid",
                         "borderBottomWidth": 1,
                         "borderColor": "#e0e0e0",
@@ -175,10 +153,6 @@ exports[`renders without crashing 1`] = `
                     aria-hidden="true"
                     style={
                       Object {
-                        "MozBoxSizing": "content-box",
-                        "MozTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        "WebkitTransform": "scaleX(0)",
-                        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                         "borderBottomStyle": "solid",
                         "borderBottomWidth": 2,
                         "borderColor": "#00bcd4",
@@ -188,7 +162,6 @@ exports[`renders without crashing 1`] = `
                         "bottom": 8,
                         "boxSizing": "content-box",
                         "margin": 0,
-                        "msTransform": "scaleX(0)",
                         "muiPrepared": true,
                         "position": "absolute",
                         "transform": "scaleX(0)",
@@ -209,14 +182,9 @@ exports[`renders without crashing 1`] = `
                   onMouseLeave={[Function]}
                   style={
                     Object {
-                      "MozTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "MozUserSelect": "none",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "WebkitUserSelect": "none",
                       "color": "rgba(0, 0, 0, 0.87)",
                       "display": "inline-block",
                       "fontSize": 24,
-                      "msUserSelect": "none",
                       "muiPrepared": true,
                       "position": "relative",
                       "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
@@ -231,8 +199,6 @@ exports[`renders without crashing 1`] = `
                 className={undefined}
                 style={
                   Object {
-                    "MozTransition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "WebkitTransition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                     "backgroundColor": "transparent",
                     "cursor": "auto",
                     "display": "inline-block",
@@ -249,21 +215,12 @@ exports[`renders without crashing 1`] = `
               >
                 <label
                   className={undefined}
-                  htmlFor="undefined-Digitesuasenha-Senha-57197"
+                  htmlFor="undefined-Digitesuasenha-Senha-47943"
                   onClick={undefined}
                   style={
                     Object {
-                      "MozTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "MozUserSelect": "none",
-                      "WebkitTransform": "scale(1) translate(0, 0)",
-                      "WebkitTransformOrigin": "left top",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "WebkitUserSelect": "none",
                       "color": "rgba(0, 0, 0, 0.3)",
                       "lineHeight": "22px",
-                      "msTransform": "scale(1) translate(0, 0)",
-                      "msTransformOrigin": "left top",
-                      "msUserSelect": "none",
                       "muiPrepared": true,
                       "pointerEvents": "none",
                       "position": "absolute",
@@ -281,8 +238,6 @@ exports[`renders without crashing 1`] = `
                 <div
                   style={
                     Object {
-                      "MozTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                      "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                       "bottom": 12,
                       "color": "rgba(0, 0, 0, 0.3)",
                       "muiPrepared": true,
@@ -296,15 +251,12 @@ exports[`renders without crashing 1`] = `
                 </div>
                 <input
                   disabled={false}
-                  id="undefined-Digitesuasenha-Senha-57197"
+                  id="undefined-Digitesuasenha-Senha-47943"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
                   style={
                     Object {
-                      "MozAppearance": "textfield",
-                      "MozBoxSizing": "border-box",
-                      "WebkitAppearance": "textfield",
                       "WebkitOpacity": 1,
                       "WebkitTapHighlightColor": "rgba(0,0,0,0)",
                       "appearance": "textfield",
@@ -330,7 +282,6 @@ exports[`renders without crashing 1`] = `
                     aria-hidden="true"
                     style={
                       Object {
-                        "MozBoxSizing": "content-box",
                         "borderBottomStyle": "solid",
                         "borderBottomWidth": 1,
                         "borderColor": "#e0e0e0",
@@ -350,10 +301,6 @@ exports[`renders without crashing 1`] = `
                     aria-hidden="true"
                     style={
                       Object {
-                        "MozBoxSizing": "content-box",
-                        "MozTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                        "WebkitTransform": "scaleX(0)",
-                        "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                         "borderBottomStyle": "solid",
                         "borderBottomWidth": 2,
                         "borderColor": "#00bcd4",
@@ -363,7 +310,6 @@ exports[`renders without crashing 1`] = `
                         "bottom": 8,
                         "boxSizing": "content-box",
                         "margin": 0,
-                        "msTransform": "scaleX(0)",
                         "muiPrepared": true,
                         "position": "absolute",
                         "transform": "scaleX(0)",
@@ -390,12 +336,7 @@ exports[`renders without crashing 1`] = `
                 onTouchStart={[Function]}
                 style={
                   Object {
-                    "MozBoxSizing": "border-box",
-                    "MozTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "MozUserSelect": "none",
                     "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
-                    "WebkitTransition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
-                    "WebkitUserSelect": "none",
                     "backgroundColor": "#9202d3",
                     "border": 10,
                     "borderRadius": 2,
@@ -410,7 +351,6 @@ exports[`renders without crashing 1`] = `
                     "lineHeight": "36px",
                     "margin": 0,
                     "minWidth": 88,
-                    "msUserSelect": "none",
                     "muiPrepared": true,
                     "outline": "none",
                     "overflow": "hidden",
