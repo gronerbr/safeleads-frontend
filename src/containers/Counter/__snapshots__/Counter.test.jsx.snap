@@ -1,25 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders without crashing 1`] = `
-<div>
+Array [
   <h1>
     Total: 
     0
-  </h1>
+  </h1>,
   <button
     onClick={[Function]}
   >
     Incrementar
-  </button>
+  </button>,
   <button
     onClick={[Function]}
   >
     Decrementar
-  </button>
+  </button>,
   <button
     onClick={[Function]}
   >
     Decrementar assíncronamente
-  </button>
-</div>
+  </button>,
+]
 `;

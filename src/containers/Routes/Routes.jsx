@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
   Route,
   Switch,
-  Redirect,
 } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
 import {
@@ -24,7 +23,7 @@ class Routes extends Component {
           <Route exact path={COUNTER} component={Counter} />
           <Route exact path={LOGIN} component={Login} />
           {/* Route fallback */}
-          <Redirect to={LOGIN} />
+          <Route component={Login} />
         </Switch>
       </ConnectedRouter>
     );
