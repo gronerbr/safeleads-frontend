@@ -1,13 +1,12 @@
 .bg{
   background-color: #01bdd6;
-  height: 100vh;
+  min-height: 100vh;
+  overflow: auto;
 }
 .card{
   background-color: #fff;
   width: 90%;
-  margin: 0 auto;
-  position: relative;
-  top: 80px;
+  margin: 50px auto;
   border-radius: 3px;
   padding: 10px;
   box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.3);
@@ -24,6 +23,12 @@
   text-align: left;
 }
 .inputWrapper{
+  div:nth-child(2) {
+    width: 250px !important;
+  }
+  div:nth-child(5) {
+    width: 250px !important;
+  }
   hr:nth-child(1) {
     border-bottom: 2px solid rgb(224, 224, 224) !important;
   }

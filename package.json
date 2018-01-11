@@ -73,7 +73,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "yarn && NODE_ENV=production BABEL_ENV=production yarn test && node scripts/build.js && yarn http-server build -o",
+    "build": "yarn && NODE_ENV=production BABEL_ENV=production yarn test && node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
   "engines": {
