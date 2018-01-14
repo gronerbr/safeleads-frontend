@@ -2,35 +2,7 @@ import 'raf/polyfill';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-/**
- * Fix Error:
- * "Solution to `It looks like you called `mount()` without a global document being loaded.`"
- */
-
-if (process.env.NODE_ENV === 'test') {
-  // eslint-disable-next-line
-  var jsdom = require('jsdom').jsdom;
-  // eslint-disable-next-line
-  var exposedProperties = ['window', 'navigator', 'document'];
-
-  global.document = jsdom('');
-  global.window = document.defaultView;
-  Object.keys(document.defaultView).forEach((property) => {
-    if (typeof global[property] === 'undefined') {
-      exposedProperties.push(property);
-      global[property] = document.defaultView[property];
-    }
-  });
-
-  global.navigator = {
-    userAgent: 'node.js',
-  };
-}
-
 // eslint-disable-next-line
-const requestAnimationFrame = global.requestAnimationFrame = callback => {
-  setTimeout(callback, 0);
-};
 
 configure({ adapter: new Adapter(), disableLifecycleMethods: true });
 

@@ -6,13 +6,9 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import App from './containers/App/App';
 import createStore from './redux/create';
-import GA from './utils/ga';
 import registerServiceWorker from './registerServiceWorker';
 
 registerServiceWorker();
-
-GA.init(process.env.REACT_APP_GA_UA_BLU365);
-GA.init(process.env.REACT_APP_GA_UA_PROJECT);
 
 const store = createStore();
 
