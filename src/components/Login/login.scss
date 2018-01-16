@@ -29,11 +29,8 @@
   div:nth-child(5) {
     width: 250px !important;
   }
-  hr:nth-child(1) {
-    border-bottom: 2px solid rgb(224, 224, 224) !important;
-  }
-  hr:nth-child(2) {
-    border-bottom: 3px solid #9202d3 !important;
+  label {
+    transition: transform 200ms 0ms;
   }
 }
 .floatingLabelFocusStyle{
@@ -41,6 +38,8 @@
 }
 .icon{
   display: inline-block;
+  bottom: -13px;
+  position: relative;
   span{
     margin: 0 10px 0 0;
     font-size: 32px !important;
@@ -48,19 +47,19 @@
   }
 }
 .logo{
-  width: 220px;
+  width: 222px;
 }
-.enterBtn{
-  color: rgb(255, 255, 255);
-  display: block;
+.buttonWrapper{
+  a {
+    text-decoration: none;
+  }
+}
+.button{
+  color: white !important;
+  display: block !important;
+  width: 100%;
   margin: 37px 0;
-  span {
-    color: #fff;
-    letter-spacing: 1px !important;
-  }
-  button{
-    width: 100%;
-  }
+  background-color: #9202d3 !important;
 }
 .forgotten {
   color: #01bdd6;
