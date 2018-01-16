@@ -1,0 +1,30 @@
+.base{
+  background-color: #35414f;
+  height: 700px;
+  padding: 10px 0;
+}
+.defaultUl {
+  margin: 0;
+  padding: 10px 20px;
+  list-style: none;
+  li {
+    display: flex;
+    align-items: center;
+
+    span { // icon
+      color: #bdd3ec;
+    }
+  }
+}
+.itemName {
+  margin-left: 10px;
+  font-size: 20px;
+  color: #bdd3ec;
+}
+.sectionTitle{
+  padding: 10px 20px;
+  color: #bdd3ec;
+  margin: 0;
+  text-align: left;
+  font-size: 20px;
+}
