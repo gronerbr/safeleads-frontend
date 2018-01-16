@@ -2,9 +2,10 @@
 import React, { Fragment } from 'react';
 import FontAwesome from 'react-fontawesome';
 import TextField from 'material-ui/TextField';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import FlatButton from 'material-ui/FlatButton';
-import FontIcon from 'material-ui/FontIcon';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Button from 'material-ui/Button';
+import Icon from 'material-ui/Icon';
+import { Link } from 'react-router-dom';
 import styles from './login.scss';
 import logo from '../../img/logo.png';
 
@@ -17,30 +18,34 @@ const Login = () => (
           <form className={styles.login__form}>
             <div className={styles.inputWrapper}>
               <div className={styles.icon}>
-                <FontIcon className="material-icons">person_outline</FontIcon>
+                <Icon className="material-icons">person_outline</Icon>
               </div>
               <TextField
-                floatingLabelFocusStyle={{color: '#9202d3'}}
-                hintText="Digite seu login"
-                floatingLabelText="Usuário"
+                placeholder="Digite seu login"
+                label="Usuário"
+                type="text"
+                margin="normal"
               />
               <br/>
               <div className={styles.icon}>
-                <FontIcon className='material-icons'>lock_outline</FontIcon>
+                <Icon className='material-icons'>lock_outline</Icon>
               </div>
               <TextField
-                floatingLabelFocusStyle={{color: '#9202d3'}}
-                hintText="Digite sua senha"
-                floatingLabelText="Senha"
+                placeholder="Digite sua senha"
+                label="Senha"
                 type="password"
+                margin="normal"
               />
             </div>
-            <div className={styles.enterBtn}>
-              <FlatButton
-                label="LOGIN"
-                backgroundColor="#9202d3"
-                hoverColor="#7800af"
-              />
+            <div className={styles.buttonWrapper}>
+              <Link to="/produtos">
+                <Button
+                  raised
+                  className={styles.button}
+                >
+                  LOGIN
+                </Button>
+              </Link>
             </div>
             <a className={styles.forgotten} href="#">Esqueci minha senha</a>
           </form>
