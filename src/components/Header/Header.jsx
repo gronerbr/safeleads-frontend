@@ -7,6 +7,14 @@ import styles from './Header.scss';
 import logo from '../../img/logo-inline.png';
 
 class Header extends Component {
+  static propTypes = {
+    onToggleMenu: PropTypes.func,
+  }
+
+  static defaultProps = {
+    onToggleMenu: () => {},
+  }
+
   constructor(props) {
     super(props);
     this.state = {};
@@ -25,13 +33,5 @@ class Header extends Component {
     );
   }
 }
-
-Header.defaultProps = {
-  onToggleMenu: () => {},
-};
-
-Header.propTypes = {
-  onToggleMenu: PropTypes.func,
-};
 
 export default Header;
