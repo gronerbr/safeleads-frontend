@@ -5,19 +5,19 @@ exports[`Example:  renders without crashing 1`] = `
   <Header
     onToggleMenu={[Function]}
   />
-  <WithStyles(GridWrapper)
+  <WithStyles
     container={true}
     spacing={0}
   >
-    <WithStyles(GridWrapper)
+    <WithStyles
       className={true}
       item={true}
       md={3}
       xs={10}
     >
       <Sidebar />
-    </WithStyles(GridWrapper)>
-    <WithStyles(GridWrapper)
+    </WithStyles>
+    <WithStyles
       item={true}
       md={9}
       xs={2}
@@ -25,7 +25,7 @@ exports[`Example:  renders without crashing 1`] = `
       <h1>
         Test
       </h1>
-    </WithStyles(GridWrapper)>
-  </WithStyles(GridWrapper)>
+    </WithStyles>
+  </WithStyles>
 </React.Fragment>
 `;
