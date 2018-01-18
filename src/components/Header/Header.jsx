@@ -24,7 +24,7 @@ class Header extends Component {
     return (
       <MuiThemeProvider>
         <div className={styles.base}>
-          <Icon className="material-icons" onClick={() => this.props.onToggleMenu()}>menu</Icon>
+          <Icon className={`material-icons ${styles.burgueMenu}`} onClick={() => this.props.onToggleMenu()}>menu</Icon>
           <Link to="/">
             <img src={logo} className={styles.logo} alt="Logo Safe Leads" />
           </Link>
