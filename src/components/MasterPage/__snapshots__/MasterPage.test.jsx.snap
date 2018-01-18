@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Example:  renders without crashing 1`] = `
+<React.Fragment>
+  <Header
+    onToggleMenu={[Function]}
+  />
+  <WithStyles(GridWrapper)
+    container={true}
+    spacing={0}
+  >
+    <WithStyles(GridWrapper)
+      className={true}
+      item={true}
+      md={3}
+      xs={10}
+    >
+      <Sidebar />
+    </WithStyles(GridWrapper)>
+    <WithStyles(GridWrapper)
+      item={true}
+      md={9}
+      xs={2}
+    >
+      <h1>
+        Test
+      </h1>
+    </WithStyles(GridWrapper)>
+  </WithStyles(GridWrapper)>
+</React.Fragment>
+`;
