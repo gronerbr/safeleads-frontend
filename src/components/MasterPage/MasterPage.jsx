@@ -20,11 +20,23 @@ class MasterPage extends Component {
       <Fragment>
         <Header onToggleMenu={() => this.setState({ isMenuOpen: !this.state.isMenuOpen })} />
         <Grid container spacing={0}>
-          <Grid className={this.state.isMenuOpen || styles.menuClosed} item xs={10} md={3}>
+          <Grid
+            className={!this.state.isMenuOpen ? styles.menuClosed : styles.menuOpen}
+            item
+            xs={10}
+            md={3}
+          >
             <Sidebar />
           </Grid>
-          <Grid item xs={this.state.isMenuOpen ? 2 : 12} md={this.state.isMenuOpen ? 9 : 12}>
-            { this.props.children }
+          <Grid
+            item
+            className={styles.bgContent}
+            xs={this.state.isMenuOpen ? 2 : 12}
+            md={this.state.isMenuOpen ? 9 : 12}
+          >
+            <div className={`${this.state.isMenuOpen && styles.baseXsMenuOpen}`}>
+              { this.props.children }
+            </div>
           </Grid>
         </Grid>
       </Fragment>

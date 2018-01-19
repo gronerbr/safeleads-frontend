@@ -1,3 +1,15 @@
 .menuClosed {
   display: none;
 }
+.menuOpen {
+  background-color: #35414f;
+}
+.bgContent {
+  background-color: #f7f7f7;
+  overflow: hidden;
+}
+@media screen and (max-width: 700px) {
+  .baseXsMenuOpen {
+    width: 800px;
+  }
+}
