@@ -1,0 +1,46 @@
+.base {
+  padding: 25px 45px 45px;
+}
+.title {
+  text-align: left;
+  margin: 25px 0;
+  font-weight: 400;
+  color: #565656;
+}
+.media {
+  height: 190px;
+}
+.cardProduct {
+  margin-top: 40px;
+}
+.textFieldWrapper {
+  text-align: left;
+}
+.tal {
+  text-align: left;
+}
+.relative {
+  position: relative;
+}
+.hoverImg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: left;
+  top: -80px;
+  background-color: rgba(58, 58, 58, 0.5);
+  padding: 10px 15px;
+}
+.productName {
+  color: #fff;
+  margin: 0 0 10px;
+}
+.productYear {
+  color: #fff;
+  margin: 0;
+}
+@media screen and (min-width: 700px) {
+  .media {
+    height: 250px;
+  }
+}
