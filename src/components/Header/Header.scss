@@ -1,5 +1,5 @@
 .base {
-  background-color: #00bcd5;
+  background-color: #3ee4f5;
   padding: 15px 40px;
   text-align: left;
   display: flex;
@@ -10,5 +10,8 @@
 }
 .logo {
   width: 160px;
-  margin-left: 50px;
+}
+.burgueMenu {
+  cursor: pointer;
+  margin-right: 50px;
 }

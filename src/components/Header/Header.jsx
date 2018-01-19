@@ -7,6 +7,14 @@ import styles from './Header.scss';
 import logo from '../../img/logo-inline.png';
 
 class Header extends Component {
+  static propTypes = {
+    onToggleMenu: PropTypes.func,
+  }
+
+  static defaultProps = {
+    onToggleMenu: () => {},
+  }
+
   constructor(props) {
     super(props);
     this.state = {};
@@ -16,7 +24,7 @@ class Header extends Component {
     return (
       <MuiThemeProvider>
         <div className={styles.base}>
-          <Icon className="material-icons" onClick={() => this.props.onToggleMenu()}>menu</Icon>
+          <Icon className={`material-icons ${styles.burgueMenu}`} onClick={() => this.props.onToggleMenu()}>menu</Icon>
           <Link to="/">
             <img src={logo} className={styles.logo} alt="Logo Safe Leads" />
           </Link>
@@ -25,13 +33,5 @@ class Header extends Component {
     );
   }
 }
-
-Header.defaultProps = {
-  onToggleMenu: () => {},
-};
-
-Header.propTypes = {
-  onToggleMenu: PropTypes.func,
-};
 
 export default Header;

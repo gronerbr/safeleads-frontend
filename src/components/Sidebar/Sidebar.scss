@@ -2,23 +2,61 @@
   background-color: #35414f;
   height: 700px;
   padding: 10px 0;
+  color: #bdd3ec;
 }
 .defaultUl {
+  padding: 0;
   margin: 0;
-  padding: 10px 20px;
   list-style: none;
   li {
-    display: flex;
-    align-items: center;
-
-    span { // icon
-      color: #bdd3ec;
+    text-align: left;
+    padding: 10px 20px;
+    .itemName {
+      position: relative;
+      top: -5px;
+    }
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.0784313725490196);
+    }
+    &.active{
+      background-color: #36c5d3;
+      position: relative;
+      &::after {
+        content: ' ';
+        border-top: 14px solid transparent;
+        border-bottom: 14px solid transparent;
+        border-right: 17px #fff solid;
+        height: 0px;
+        position: absolute;
+        right: 0;
+        top: 10px;
+      }
+      span {
+        color: #fff;
+      }
+    }
+  }
+}
+.internalUl{
+  margin: 10px 0;
+  padding: 0;
+  list-style: none;
+  li {
+    text-align: left;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.0784313725490196);
+    }
+  }
+  li {
+    padding: 10px 20px 10px 55px;
+    &.active {
+      background-color: rgba(255, 255, 255, 0.0784314);
     }
   }
 }
 .itemName {
   margin-left: 10px;
-  font-size: 20px;
+  font-size: 18px;
   color: #bdd3ec;
 }
 .sectionTitle{
@@ -27,4 +65,9 @@
   margin: 0;
   text-align: left;
   font-size: 20px;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+.bordered{
+  border-top: 1px solid #3b4958;
 }
