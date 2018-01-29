@@ -1,4 +1,5 @@
 var jsonServer = require('json-server')
+var serve = require('serve')
 var server = jsonServer.create()
 var db = {
 "products":
@@ -39,6 +40,10 @@ var db = {
 }
 var router = jsonServer.router(db)
 var middlewares = jsonServer.defaults()
+
+const serverStatic = serve('./build/', {
+  port: 5000,
+});
 
 server.use(middlewares)
 server.use(router)
