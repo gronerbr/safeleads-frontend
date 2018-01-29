@@ -4,6 +4,7 @@ import { getProducts } from '../../redux/modules/productList';
 
 const mapStateToProps = state => ({
   loading: state.products.loading,
+  list: state.products.list,
 });
 
 const mapDispatchToProps = dispatch => ({

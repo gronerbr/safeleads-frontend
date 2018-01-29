@@ -1,22 +1,25 @@
-/* eslint-disable */
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import Card, { CardMedia, CardActions, CardContent } from 'material-ui/Card';
+import Card, { CardActions, CardContent } from 'material-ui/Card';
 import Button from 'material-ui/Button';
-import Typography from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
 import TextField from 'material-ui/TextField';
+import { RotateSpinLoader } from 'react-css-loaders';
+import AddIcon from 'material-ui-icons/Add';
 import styles from './ProductList.scss';
 import MasterPage from '../MasterPage/MasterPage';
-import imgPlaceholder from '../../img/car-placeholder.jpg';
+import Product from '../../containers/Product/Product';
 
 class ProductList extends Component {
   static propTypes = {
-    className: PropTypes.string,
+    list: PropTypes.arrayOf(PropTypes.object).isRequired,
+    isMenuOpen: PropTypes.bool.isRequired,
+    loading: PropTypes.bool,
+    getProducts: PropTypes.func.isRequired,
   };
 
-  constructor(props) {
-    super(props);
+  static defaultProps = {
+    loading: true,
   }
 
   componentDidMount() {
@@ -56,66 +59,37 @@ class ProductList extends Component {
               <Button dense><b>FILTRAR</b></Button>
             </CardActions>
           </Card>
-          { this.props.loading ||
-            <Grid container spacing={40}>
-              <Grid item md={6} xs={12}>
-                <Card className={styles.cardProduct}>
-                  <CardMedia
-                    className={styles.media}
-                    image={imgPlaceholder}
-                    title="Contemplative Reptile"
-                  />
-                  <CardContent className={styles.relative}>
-                    <div className={styles.hoverImg}>
-                      <h1 className={styles.productName}>Fusion</h1>
-                      <h6 className={styles.productYear}>2014/2015</h6>
-                    </div>
-                    <Typography className={styles.tal} type="headline" component="h2">
-                      Lizard
-                    </Typography>
-                    <Typography className={styles.tal} component="p">
-                      Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                      across all continents except Antarctica
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button dense color="primary">
-                      EDITAR
-                    </Button>
-                    <Button dense color="primary">
-                      DELETAR
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-              <Grid item md={6} xs={12}>
-                <Card className={styles.cardProduct}>
-                  <CardMedia
-                    className={styles.media}
-                    image={imgPlaceholder}
-                    title="Contemplative Reptile"
-                  />
-                  <CardContent>
-                    <Typography type="headline" component="h2">
-                      Lizard
-                    </Typography>
-                    <Typography component="p">
-                      Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                      across all continents except Antarctica
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button dense color="primary">
-                      EDITAR
-                    </Button>
-                    <Button dense color="primary">
-                      DELETAR
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            </Grid>
+          { this.props.loading &&
+            <Fragment>
+              <RotateSpinLoader className={styles.loading} />
+              <h3>Carregando</h3>
+            </Fragment>
           }
+          <Grid container spacing={40} className={styles.cardsWrapper}>
+            { this.props.loading ||
+              this.props.list.map(product => (
+                <Product
+                  key={product.id}
+                  id={product.id}
+                  img={product.img}
+                  name={product.name}
+                  year={product.year}
+                  price={product.price}
+                  desc={product.desc}
+                />
+              ))
+            }
+            { this.props.list.length === 0 && !this.props.loading &&
+              <Grid item md={12} xs={12}>
+                <h2>Nenhum produto encontrado</h2>
+              </Grid>
+            }
+          </Grid>
+        </div>
+        <div className={styles.addBtn}>
+          <Button fab color="primary" aria-label="add">
+            <AddIcon />
+          </Button>
         </div>
       </MasterPage>
     );
