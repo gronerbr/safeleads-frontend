@@ -6,10 +6,14 @@ export const FETCH_FAIL = 'product/FETCH_FAIL';
 export const DELETE_PRODUCT = 'product/DELETE_PRODUCT';
 export const DELETE_SUCCESS_PRODUCT = 'product/DELETE_SUCCESS_PRODUCT';
 export const DELETE_FAIL_PRODUCT = 'product/DELETE_FAIL_PRODUCT';
+export const SHORTADD_SUCCESS = 'product/SHORTADD_SUCCESS';
+export const SHORTADD_FAIL = 'product/SHORTADD_FAIL';
+export const SHORTADD_START = 'product/SHORTADD_START';
 
 const defaultState = {
   list: [],
   loading: false,
+  loadingAdd: false,
 };
 
 const reducer = (state = defaultState, action) => {
@@ -20,6 +24,8 @@ const reducer = (state = defaultState, action) => {
       return { ...state, list: action.payload, loading: false };
     case DELETE_SUCCESS_PRODUCT:
       return { ...state, list: action.list, loading: false };
+    case SHORTADD_SUCCESS:
+      return { ...state, list: [...state.list, action.payload], loadingAdd: false };
     default:
       return state;
   }
@@ -69,6 +75,23 @@ export const deleteProduct = (id) => {
         dispatch(deleteError);
       });
   };
+};
+
+export const shortAddSuccess = payload => ({ type: SHORTADD_SUCCESS, payload });
+
+export const shortAddError = err => ({ type: SHORTADD_FAIL, err });
+
+export const shortAddStart = () => ({ type: SHORTADD_START });
+
+export const shortAdd = product => (dispatch) => {
+  dispatch(shortAddStart());
+  axios.post(`${process.env.REACT_APP_WS_URL}/products`, product)
+    .then((res) => {
+      dispatch(shortAddSuccess(res.data));
+    })
+    .catch((err) => {
+      shortAddError(err);
+    });
 };
 
 export default reducer;
