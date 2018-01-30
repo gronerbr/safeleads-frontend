@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ProductList from '../../components/ProductList/ProductList';
-import { getProducts } from '../../redux/modules/productList';
+import { getProducts, shortAdd } from '../../redux/modules/productList';
 
 const mapStateToProps = state => ({
   loading: state.products.loading,
@@ -9,6 +9,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   getProducts: filter => dispatch(getProducts(filter)),
+  shortAdd: product => dispatch(shortAdd(product)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductList);

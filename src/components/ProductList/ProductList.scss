@@ -26,6 +26,14 @@
   margin-bottom: 10px;
   width: 30px;
 }
+.modalContent {
+  outline: none;
+  font-family: Roboto, Helvetica;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 @media screen and (min-width: 700px) {
   .media {
     height: 250px;

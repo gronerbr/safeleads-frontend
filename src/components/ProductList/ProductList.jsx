@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Card, { CardActions, CardContent } from 'material-ui/Card';
 import Button from 'material-ui/Button';
+import Modal from 'material-ui/Modal';
 import Grid from 'material-ui/Grid';
 import TextField from 'material-ui/TextField';
 import { RotateSpinLoader } from 'react-css-loaders';
@@ -16,14 +17,38 @@ class ProductList extends Component {
     isMenuOpen: PropTypes.bool.isRequired,
     loading: PropTypes.bool,
     getProducts: PropTypes.func.isRequired,
+    shortAdd: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
     loading: true,
   }
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      modalAddProduct: false,
+      name: '',
+      price: '',
+    };
+  }
+
   componentDidMount() {
     this.props.getProducts();
+  }
+
+  handleModalClose() {
+    this.setState({ modalAddProduct: false });
+  }
+
+  openAdd() {
+    this.setState({ modalAddProduct: true });
+  }
+
+  handleAddChange(evt) {
+    this.setState({
+      [evt.target.name]: evt.target.value,
+    });
   }
 
   render() {
@@ -87,9 +112,59 @@ class ProductList extends Component {
           </Grid>
         </div>
         <div className={styles.addBtn}>
-          <Button fab color="primary" aria-label="add">
+          <Button
+            fab
+            color="primary"
+            aria-label="add"
+            onClick={() => this.openAdd()}
+          >
             <AddIcon />
           </Button>
+          <Modal
+            aria-labelledby="simple-modal-title"
+            aria-describedby="simple-modal-description"
+            onClose={() => this.handleModalClose()}
+            open={this.state.modalAddProduct}
+          >
+            <div className={styles.modalContent}>
+              <Card>
+                <CardContent>
+                  <h3>Novo produto</h3>
+                  <form action={a => a.preventDefault() && console.log(a)}>
+                    <TextField
+                      id="productName"
+                      name="name"
+                      label="Nome do produto"
+                      type="text"
+                      onChange={evt => this.handleAddChange(evt)}
+                      margin="normal"
+                      fullWidth
+                    />
+                    <TextField
+                      id="productPrice"
+                      label="Preço"
+                      name="price"
+                      onChange={evt => this.handleAddChange(evt)}
+                      type="text"
+                      margin="normal"
+                      fullWidth
+                    />
+                  </form>
+                </CardContent>
+                <CardActions>
+                  <Button onClick={() => this.handleModalClose()}>CANCELAR</Button>
+                  <Button
+                    onClick={() => this.props.shortAdd({
+                      name: this.state.name,
+                      price: this.state.price,
+                    })}
+                  >
+                    ADICIONAR
+                  </Button>
+                </CardActions>
+              </Card>
+            </div>
+          </Modal>
         </div>
       </MasterPage>
     );
