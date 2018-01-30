@@ -4,6 +4,7 @@ import Card, { CardMedia, CardActions, CardContent } from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
 import Modal from 'material-ui/Modal';
 import Button from 'material-ui/Button';
+import TextField from 'material-ui/TextField';
 import PropTypes from 'prop-types';
 import styles from './Product.scss';
 import toBrl from '../../utils/toBrl';
@@ -30,7 +31,19 @@ class Product extends Component {
     super(props);
     this.state = {
       modalOpen: false,
+      xeditable: false,
+      name: this.props.name,
     };
+  }
+
+  onXeditableLeave() {
+    this.setState({
+      xeditable: false,
+    });
+  }
+
+  xeditableStart() {
+    this.setState({ xeditable: true });
   }
 
   handleModalClose() {
@@ -39,6 +52,10 @@ class Product extends Component {
 
   openModal() {
     this.setState({ modalOpen: true });
+  }
+
+  handleChange(evt) {
+    this.setState({ [evt.target.name]: evt.target.value });
   }
 
   render() {
@@ -51,7 +68,28 @@ class Product extends Component {
           />
           <CardContent className={styles.relative}>
             <div className={styles.hoverImg}>
-              <h1 className={styles.productName}>{this.props.name}</h1>
+              <div
+                role="presentation"
+                onClick={evt => this.xeditableStart(evt)}
+                onKeyDown={evt => this.xeditableStart(evt)}
+              >
+                { this.state.xeditable ||
+                  <h1 className={styles.productName}>{this.state.name}</h1>
+                }
+                { this.state.xeditable &&
+                  <TextField
+                    className={styles.xeditableTitle}
+                    onBlur={evt => this.onXeditableLeave(evt)}
+                    onChange={evt => this.handleChange(evt)}
+                    type="text"
+                    name="name"
+                    autofocus
+                    value={this.state.name}
+                    margin="normal"
+                    fullWidth
+                  />
+                }
+              </div>
               <h6 className={styles.productYear}>{this.props.year}</h6>
             </div>
             <Typography className={styles.tal} type="headline" component="h2">
