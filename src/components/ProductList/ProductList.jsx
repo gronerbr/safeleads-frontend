@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Card, { CardActions, CardContent } from 'material-ui/Card';
 import Button from 'material-ui/Button';
 import Modal from 'material-ui/Modal';
+import Checkbox from 'material-ui/Checkbox';
 import Grid from 'material-ui/Grid';
 import TextField from 'material-ui/TextField';
 import { RotateSpinLoader } from 'react-css-loaders';
@@ -30,6 +31,7 @@ class ProductList extends Component {
       modalAddProduct: false,
       name: '',
       price: '',
+      keepAdding: false,
     };
   }
 
@@ -49,6 +51,20 @@ class ProductList extends Component {
     this.setState({
       [evt.target.name]: evt.target.value,
     });
+  }
+
+  handleKeepAdding() {
+    this.setState({ keepAdding: !this.state.keepAdding });
+  }
+
+  handleAddProduct() {
+    this.props.shortAdd({
+      name: this.state.name,
+      price: this.state.price,
+    });
+    if (!this.state.keepAdding) {
+      this.handleModalClose();
+    }
   }
 
   render() {
@@ -130,7 +146,7 @@ class ProductList extends Component {
               <Card>
                 <CardContent>
                   <h3>Novo produto</h3>
-                  <form action={a => a.preventDefault() && console.log(a)}>
+                  <form>
                     <TextField
                       id="productName"
                       name="name"
@@ -149,15 +165,22 @@ class ProductList extends Component {
                       margin="normal"
                       fullWidth
                     />
+                    <Checkbox
+                      id="keepAdding"
+                      defaultChecked={this.state.keepAdding}
+                      onChange={() => this.handleKeepAdding()}
+                    />
+                    { /* eslint-disable */ }
+                    <label htmlFor="keepadding">
+                      Continuar adicionando
+                    </label>
+                    { /* eslint-enable */ }
                   </form>
                 </CardContent>
                 <CardActions>
                   <Button onClick={() => this.handleModalClose()}>CANCELAR</Button>
                   <Button
-                    onClick={() => this.props.shortAdd({
-                      name: this.state.name,
-                      price: this.state.price,
-                    })}
+                    onClick={evt => this.handleAddProduct(evt)}
                   >
                     ADICIONAR
                   </Button>

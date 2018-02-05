@@ -83,7 +83,7 @@ class Product extends Component {
                     onChange={evt => this.handleChange(evt)}
                     type="text"
                     name="name"
-                    autofocus
+                    autoFocus
                     value={this.state.name}
                     margin="normal"
                     fullWidth
