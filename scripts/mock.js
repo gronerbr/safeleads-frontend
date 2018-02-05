@@ -1,5 +1,4 @@
 var jsonServer = require('json-server')
-var serve = require('serve')
 var server = jsonServer.create()
 var db = {
 "products":
@@ -38,15 +37,15 @@ var db = {
     }
   ]
 }
-var router = jsonServer.router(db)
-var middlewares = jsonServer.defaults()
 
-const serverStatic = serve('./build/', {
-  port: 5000,
-});
+const mockServer = () => {
+  const router = jsonServer.router(db)
+  const middlewares = jsonServer.defaults()
+  server.use(middlewares)
+  server.use(router)
+  server.listen(8080, function () {
+    console.log('JSON Server is running')
+  });
+}
 
-server.use(middlewares)
-server.use(router)
-server.listen(8080, function () {
-  console.log('JSON Server is running')
-})
+module.exports = mockServer;
