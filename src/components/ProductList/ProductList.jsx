@@ -146,7 +146,7 @@ class ProductList extends Component {
               <Card>
                 <CardContent>
                   <h3>Novo produto</h3>
-                  <form>
+                  <form className={styles.shortAddFrm}>
                     <TextField
                       id="productName"
                       name="name"
