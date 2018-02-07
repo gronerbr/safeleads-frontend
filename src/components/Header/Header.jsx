@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Link } from 'react-router-dom';
 import Icon from 'material-ui/Icon';
 import PropTypes from 'prop-types';
@@ -22,14 +21,12 @@ class Header extends Component {
 
   render() {
     return (
-      <MuiThemeProvider>
-        <div className={styles.base}>
-          <Icon className={`material-icons ${styles.burgueMenu}`} onClick={() => this.props.onToggleMenu()}>menu</Icon>
-          <Link to="/">
-            <img src={logo} className={styles.logo} alt="Logo Safe Leads" />
-          </Link>
-        </div>
-      </MuiThemeProvider>
+      <div className={styles.base}>
+        <Icon className={`material-icons ${styles.burgueMenu}`} onClick={() => this.props.onToggleMenu()}>menu</Icon>
+        <Link to="/">
+          <img src={logo} className={styles.logo} alt="Logo Safe Leads" />
+        </Link>
+      </div>
     );
   }
 }

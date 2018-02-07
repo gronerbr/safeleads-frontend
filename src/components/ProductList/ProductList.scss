@@ -1,0 +1,51 @@
+.base {
+  padding: 25px 15px 45px;
+}
+.title {
+  text-align: left;
+  margin: 25px 0;
+  font-weight: 400;
+  color: #565656;
+}
+.textFieldWrapper {
+  text-align: left;
+}
+.relative {
+  position: relative;
+}
+.addBtn {
+  position: fixed;
+  right: 0;
+  bottom: 10px;
+}
+.cardsWrapper {
+  padding-top: 40px;
+}
+.loading {
+  height: 30px;
+  margin-bottom: 10px;
+  width: 30px;
+}
+.modalContent {
+  outline: none;
+  font-family: Roboto, Helvetica;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.shortAddFrm {
+  line-height: 58px;
+}
+@media screen and (min-width: 700px) {
+  .media {
+    height: 250px;
+  }
+  .base {
+    padding: 25px 45px 45px;
+  }
+  .addBtn {
+    right: 20px;
+    bottom: 30px;
+  }
+}

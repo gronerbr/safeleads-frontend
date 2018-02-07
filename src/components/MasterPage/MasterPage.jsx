@@ -7,7 +7,7 @@ import styles from './MasterPage.scss';
 
 class MasterPage extends Component {
   static propTypes = {
-    children: PropTypes.element.isRequired,
+    children: PropTypes.arrayOf(PropTypes.element).isRequired,
   }
   constructor(props) {
     super(props);
@@ -20,11 +20,24 @@ class MasterPage extends Component {
       <Fragment>
         <Header onToggleMenu={() => this.setState({ isMenuOpen: !this.state.isMenuOpen })} />
         <Grid container spacing={0}>
-          <Grid className={this.state.isMenuOpen || styles.menuClosed} item xs={10} md={3}>
+          <Grid
+            className={!this.state.isMenuOpen ? styles.menuClosed : styles.menuOpen}
+            item
+            xs={10}
+            md={2}
+          >
             <Sidebar />
           </Grid>
-          <Grid item xs={this.state.isMenuOpen ? 2 : 12} md={this.state.isMenuOpen ? 9 : 12}>
-            { this.props.children }
+          <Grid
+            item
+            className={styles.bgContent}
+            xs={this.state.isMenuOpen ? 2 : 12}
+            md={this.state.isMenuOpen ? 10 : 12}
+          >
+            <div className={`${this.state.isMenuOpen && styles.baseXsMenuOpen}`}>
+              { this.props.children }
+              <div className={styles.copyright}>Copyright SafeLeads</div>
+            </div>
           </Grid>
         </Grid>
       </Fragment>
