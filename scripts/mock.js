@@ -47,5 +47,5 @@ const mockServer = () => {
     console.log('JSON Server is running')
   });
 }
-
+mockServer();
 module.exports = mockServer;
