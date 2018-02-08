@@ -1,1 +1,1 @@
-web: node scripts/mock.js
+web: node ./scripts/mock.js
