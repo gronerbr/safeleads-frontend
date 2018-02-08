@@ -36,6 +36,7 @@ class MasterPage extends Component {
           >
             <div className={`${this.state.isMenuOpen && styles.baseXsMenuOpen}`}>
               { this.props.children }
+              <div className={styles.copyright}>Copyright SafeLeads</div>
             </div>
           </Grid>
         </Grid>
