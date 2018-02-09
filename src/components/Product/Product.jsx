@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Grid from 'material-ui/Grid';
 import Card, { CardMedia, CardActions, CardContent } from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
@@ -100,12 +101,14 @@ class Product extends Component {
             </Typography>
           </CardContent>
           <CardActions>
-            <Button
-              dense
-              color="primary"
-            >
-              EDITAR
-            </Button>
+            <Link to={`/produto/${this.props.id}`} className={styles.link}>
+              <Button
+                dense
+                color="primary"
+              >
+                EDITAR
+              </Button>
+            </Link>
             <Button
               dense
               color="primary"
