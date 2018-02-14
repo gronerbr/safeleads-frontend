@@ -19,11 +19,13 @@ var db = {
       "videos": [
         {
           "youtube": "https://www.youtube.com/watch?v=5RWS-Kq1kgs",
+          "thumbnail": "https://img.youtube.com/vi/5RWS-Kq1kgs/sddefault.jpg",
           "title": "adasdas",
           "desc": "lorem ipsum dolor sit ammet"
         },
         {
           "youtube": "https://www.youtube.com/watch?v=5f_jKEmlkTU",
+          "thumbnail": "https://img.youtube.com/vi/5f_jKEmlkTU/sddefault.jpg",
           "title": "adasdas",
           "desc": "lorem ipsum dolor sit ammet"
         }
@@ -45,11 +47,13 @@ var db = {
       "videos": [
         {
           "youtube": "https://www.youtube.com/watch?v=5RWS-Kq1kgs",
+          "thumbnail": "https://img.youtube.com/vi/5f_jKEmlkTU/sddefault.jpg",
           "title": "adasdas",
           "desc": "lorem ipsum dolor sit ammet"
         },
         {
           "youtube": "https://www.youtube.com/watch?v=5f_jKEmlkTU",
+          "thumbnail": "https://img.youtube.com/vi/5f_jKEmlkTU/sddefault.jpg",
           "title": "adasdas",
           "desc": "lorem ipsum dolor sit ammet"
         }
@@ -71,11 +75,13 @@ var db = {
       "videos": [
         {
           "youtube": "https://www.youtube.com/watch?v=5RWS-Kq1kgs",
+          "thumbnail": "https://img.youtube.com/vi/5f_jKEmlkTU/sddefault.jpg",
           "title": "adasdas",
           "desc": "lorem ipsum dolor sit ammet"
         },
         {
           "youtube": "https://www.youtube.com/watch?v=5f_jKEmlkTU",
+          "thumbnail": "https://img.youtube.com/vi/5f_jKEmlkTU/sddefault.jpg",
           "title": "adasdas",
           "desc": "lorem ipsum dolor sit ammet"
         }
@@ -97,11 +103,13 @@ var db = {
       "videos": [
         {
           "youtube": "https://www.youtube.com/watch?v=5RWS-Kq1kgs",
+          "thumbnail": "https://img.youtube.com/vi/5f_jKEmlkTU/sddefault.jpg",
           "title": "adasdas",
           "desc": "lorem ipsum dolor sit ammet"
         },
         {
           "youtube": "https://www.youtube.com/watch?v=5f_jKEmlkTU",
+          "thumbnail": "https://img.youtube.com/vi/5f_jKEmlkTU/sddefault.jpg",
           "title": "adasdas",
           "desc": "lorem ipsum dolor sit ammet"
         }
