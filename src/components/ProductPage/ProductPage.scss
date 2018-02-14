@@ -1,0 +1,74 @@
+.base {
+  padding: 25px 15px 45px;
+  max-width: 100%;
+  text-align: left;
+}
+.title {
+  text-align: left;
+  margin: 25px 0;
+  font-weight: 400;
+  color: #565656;
+}
+.saveBtn {
+  position: fixed !important;
+  right: 0;
+  bottom: 10px;
+}
+.imgThumb {
+  min-height: 210px;
+  position: relative;
+}
+.imgLabel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  input {
+    display: none;
+  }
+  &:hover {
+    .showOnHover {
+      display: flex;
+      cursor: pointer;
+    }
+  }
+}
+.showOnHover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.52);
+}
+.itemDesc {
+  position: relative;
+}
+.removeItemBtn {
+  position: absolute !important;
+  top: -20px;
+  right: 10px;
+}
+.addImgWrapper {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.listImgGrid {
+  align-items: center;
+}
+@media screen and (min-width: 700px) {
+  .base {
+    padding: 25px 45px 45px;
+  }
+  .saveBtn {
+    right: 20px;
+    bottom: 30px;
+  }
+}
