@@ -1,9 +1,27 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import 'normalize.css';
 import 'font-awesome/css/font-awesome.min.css';
 import style from './App.scss';
 import Routes from '../Routes/Routes';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      light: '#d05ce3',
+      main: '#9c27b0',
+      dark: '#6a0080',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#6effff',
+      main: '#00e5ff',
+      dark: '#00b2cc',
+      contrastText: '#000',
+    },
+  },
+});
 
 class App extends Component {
   constructor(props) {
@@ -32,7 +50,9 @@ class App extends Component {
     return (
       <div className={style.App} ref={1}>
         <main>
-          <Routes />
+          <MuiThemeProvider theme={theme}>
+            <Routes />
+          </MuiThemeProvider>
         </main>
       </div>
     );
