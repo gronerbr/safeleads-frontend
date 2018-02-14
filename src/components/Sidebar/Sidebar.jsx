@@ -1,19 +1,9 @@
-/*eslint-disable*/
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import Icon from 'material-ui/Icon';
 import styles from './Sidebar.scss';
 
 class Sidebar extends Component {
-  static propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-  };
-
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className={styles.base}>
@@ -31,8 +21,8 @@ class Sidebar extends Component {
           </li>
         </ul>
         <ul className={styles.internalUl}>
-          <li className={styles.active}>Produtos</li>
-          <li>Categorias</li>
+          <li className={styles.active}><Link to="/produtos">Produtos</Link></li>
+          <li><Link to="/categorias">Categorias</Link></li>
         </ul>
         <ul className={styles.defaultUl}>
           <li className={styles.bordered}>
