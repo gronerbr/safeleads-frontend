@@ -111,7 +111,7 @@ class ProductList extends Component {
                 <Product
                   key={product.id}
                   id={product.id}
-                  img={product.images && product.images[0].src}
+                  img={product.images && product.images[0] && product.images[0].src}
                   name={product.name}
                   year={product.year}
                   price={product.price}
