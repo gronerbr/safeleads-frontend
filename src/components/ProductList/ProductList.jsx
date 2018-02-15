@@ -15,7 +15,6 @@ import Product from '../../containers/Product/Product';
 class ProductList extends Component {
   static propTypes = {
     list: PropTypes.arrayOf(PropTypes.object).isRequired,
-    isMenuOpen: PropTypes.bool.isRequired,
     loading: PropTypes.bool,
     getProducts: PropTypes.func.isRequired,
     shortAdd: PropTypes.func.isRequired,
@@ -70,7 +69,7 @@ class ProductList extends Component {
   render() {
     return (
       <MasterPage>
-        <div className={`${styles.base} ${this.props.isMenuOpen && styles.baseXsMenuOpen}`}>
+        <div className={styles.base}>
           <h1 className={styles.title}>Produtos</h1>
           <Card className={styles.card}>
             <CardContent>
