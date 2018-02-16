@@ -37,7 +37,7 @@ class ProductPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 1,
+      tabIndex: 0,
     };
   }
   componentDidMount() {
@@ -124,7 +124,7 @@ class ProductPage extends Component {
     });
   }
   handleTabChange = (event, value) => {
-    this.setState({ value });
+    this.setState({ tabIndex: value });
   }
   render() {
     return (
@@ -143,8 +143,8 @@ class ProductPage extends Component {
               <Tab label="Anúncios" icon={<AdIcon />} />
             </Tabs>
           </AppBar>
-          {this.state.value === 0 && <div>Item One</div>}
-          {this.state.value === 1 &&
+          {this.state.tabIndex === 0 && <div>Item One</div>}
+          {this.state.tabIndex === 1 &&
             <Fragment>
               <ListImages
                 list={this.props.images}
@@ -161,7 +161,7 @@ class ProductPage extends Component {
               />
             </Fragment>
           }
-          {this.state.value === 2 && <div>Item Three</div>}
+          {this.state.tabIndex === 2 && <div>Item Three</div>}
         </div>
         <Button
           fab
