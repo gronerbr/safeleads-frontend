@@ -1,6 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 import Grid from 'material-ui/Grid';
+import Drawer from 'material-ui/Drawer';
 import Header from '../Header/Header';
 import Sidebar from '../Sidebar/Sidebar';
 import styles from './MasterPage.scss';
@@ -11,30 +12,52 @@ class MasterPage extends Component {
   }
   constructor(props) {
     super(props);
-    this.state = {
-      isMenuOpen: true,
+    window.onresize = () => {
+      this.setState({
+        isSizeMenuOpen: (document.body.offsetWidth > 900),
+      });
     };
+    this.state = {
+      isClickMenuOpen: false,
+      isSizeMenuOpen: (document.body.offsetWidth > 900),
+    };
+  }
+  handleMenuChange() {
+    debugger;
   }
   render() {
     return (
       <Fragment>
-        <Header onToggleMenu={() => this.setState({ isMenuOpen: !this.state.isMenuOpen })} />
+        <Header onToggleMenu={() => this.setState({ isClickMenuOpen: true })} />
         <Grid container spacing={0}>
           <Grid
-            className={!this.state.isMenuOpen ? styles.menuClosed : styles.menuOpen}
+            className={styles.drawer}
             item
             xs={10}
             md={2}
           >
-            <Sidebar />
+            <Drawer
+              // open={this.state.isClickMenuOpen || this.state.isSizeMenuOpen}
+              open
+              variant="persistent"
+              classes={{
+                docked: {
+                  flex: '0 0 auto',
+                },
+                paper: {
+                  top: 100,
+                },
+              }}
+              onClose={() => this.setState({ isClickMenuOpen: false })}
+            >
+              <Sidebar />
+            </Drawer>
           </Grid>
           <Grid
             item
             className={styles.bgContent}
-            xs={this.state.isMenuOpen ? 2 : 12}
-            md={this.state.isMenuOpen ? 10 : 12}
           >
-            <div className={`${this.state.isMenuOpen && styles.baseXsMenuOpen}`}>
+            <div className={`${(this.state.isClickMenuOpen || this.state.isSizeMenuOpen) && styles.baseXsMenuOpen}`}>
               { this.props.children }
               <div className={styles.copyright}>Copyright SafeLeads</div>
             </div>
