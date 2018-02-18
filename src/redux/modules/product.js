@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+export const UPDATE_PRODUCT = 'product/UPDATE_PRODUCT';
 export const FETCH_PRODUCT = 'product/FETCH_PRODUCT';
-export const FETCH_SUCCESS = 'product/FETCH_SUCCESS';
+export const FETCH_PRODUCT_SUCCESS = 'product/FETCH_PRODUCT_SUCCESS';
+export const FETCH_LIST_SUCCESS = 'product/FETCH_LIST_SUCCESS';
 export const FETCH_FAIL = 'product/FETCH_FAIL';
 export const DELETE_PRODUCT = 'product/DELETE_PRODUCT';
 export const DELETE_SUCCESS_PRODUCT = 'product/DELETE_SUCCESS_PRODUCT';
@@ -14,14 +16,19 @@ const defaultState = {
   list: [],
   loading: false,
   loadingAdd: false,
+  product: {},
 };
 
 const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case FETCH_PRODUCT:
       return { ...state, loading: true };
-    case FETCH_SUCCESS:
+    case UPDATE_PRODUCT:
+      return { ...state, product: { ...state.product, ...action.patch } };
+    case FETCH_LIST_SUCCESS:
       return { ...state, list: action.payload, loading: false };
+    case FETCH_PRODUCT_SUCCESS:
+      return { ...state, product: action.payload, loading: false };
     case DELETE_SUCCESS_PRODUCT:
       return { ...state, list: action.list, loading: false };
     case SHORTADD_SUCCESS:
@@ -31,15 +38,28 @@ const reducer = (state = defaultState, action) => {
   }
 };
 
-export const productSuccess = payload => ({ type: FETCH_SUCCESS, payload });
-
 export const productError = err => ({ type: FETCH_FAIL, err });
 
 export const productFetch = () => ({ type: FETCH_PRODUCT });
 
-export const getProducts = () => (dispatch) => {
+export const productListSuccess = payload => ({ type: FETCH_LIST_SUCCESS, payload });
+
+export const getProductList = () => (dispatch) => {
   dispatch(productFetch());
   axios.get(`${process.env.REACT_APP_WS_URL}/products`)
+    .then((res) => {
+      dispatch(productListSuccess(res.data));
+    })
+    .catch((err) => {
+      productError(err);
+    });
+};
+
+export const productSuccess = payload => ({ type: FETCH_PRODUCT_SUCCESS, payload });
+
+export const getProduct = id => (dispatch) => {
+  dispatch(productFetch());
+  axios.get(`${process.env.REACT_APP_WS_URL}/products/${id}`)
     .then((res) => {
       dispatch(productSuccess(res.data));
     })
@@ -47,6 +67,19 @@ export const getProducts = () => (dispatch) => {
       productError(err);
     });
 };
+
+export const updateProduct = patch => ({ type: UPDATE_PRODUCT, patch });
+
+/*eslint-disable*/
+export const saveProduct = product => dispatch => {
+  axios.put(`${process.env.REACT_APP_WS_URL}/products/${product.id}`, product)
+    .then((res) => {
+
+    })
+    .catch((err) => {
+
+    })
+}
 
 export const deleteSuccess = (id) => {
   return (dispatch, getState) => {
