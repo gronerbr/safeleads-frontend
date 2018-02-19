@@ -31,22 +31,18 @@ class MasterPage extends Component {
         <Header onToggleMenu={() => this.setState({ isClickMenuOpen: true })} />
         <Grid container spacing={0}>
           <Grid
-            className={styles.drawer}
             item
             xs={10}
             md={2}
           >
             <Drawer
-              // open={this.state.isClickMenuOpen || this.state.isSizeMenuOpen}
-              open
+              open={this.state.isClickMenuOpen || this.state.isSizeMenuOpen}
               variant="persistent"
+              ModalProps={{
+                hideBackdrop: this.state.isSizeMenuOpen,
+              }}
               classes={{
-                docked: {
-                  flex: '0 0 auto',
-                },
-                paper: {
-                  top: 100,
-                },
+                paper: styles.drawer,
               }}
               onClose={() => this.setState({ isClickMenuOpen: false })}
             >
