@@ -70,11 +70,12 @@ export const getProduct = id => (dispatch) => {
 
 export const updateProduct = patch => ({ type: UPDATE_PRODUCT, patch });
 
+export const setProductId = id => updateProduct({ id });
+
 /*eslint-disable*/
 export const saveProduct = product => dispatch => {
   axios.put(`${process.env.REACT_APP_WS_URL}/products/${product.id}`, product)
     .then((res) => {
-
     })
     .catch((err) => {
 
@@ -121,6 +122,7 @@ export const shortAdd = product => (dispatch) => {
   axios.post(`${process.env.REACT_APP_WS_URL}/products`, product)
     .then((res) => {
       dispatch(shortAddSuccess(res.data));
+      dispatch(setProductId(res.data.id));
     })
     .catch((err) => {
       shortAddError(err);
