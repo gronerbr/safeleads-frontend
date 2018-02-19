@@ -1,14 +1,8 @@
-/*eslint-disable*/
 import React from 'react';
 import PropTypes from 'prop-types';
 import Grid from 'material-ui/Grid';
-import Button from 'material-ui/Button';
 import Checkbox from 'material-ui/Checkbox';
 import TextField from 'material-ui/TextField';
-import AddIcon from 'material-ui-icons/Add';
-import RemoveIcon from 'material-ui-icons/Remove';
-import UploadIcon from 'material-ui-icons/FileUpload';
-import styles from './ProductPage.scss';
 
 const GeneralProductForm = props => (
   <Grid container>
@@ -114,22 +108,22 @@ const GeneralProductForm = props => (
             }
           />
           <TextField
-              id="multiline-static"
-              label="Observações"
-              value={props.product.description}
-              name="description"
-              multiline
-              rows="4"
-              InputLabelProps={{
+            id="multiline-static"
+            label="Observações"
+            value={props.product.description}
+            name="description"
+            multiline
+            rows="4"
+            InputLabelProps={{
                 shrink: true,
               }}
-              onChange={
+            onChange={
                 event => props.onChangeProduct(event)
               }
-              fullWidth
-              placeholder="Descreva informações sobre o veículo"
-              margin="normal"
-            />
+            fullWidth
+            placeholder="Descreva informações sobre o veículo"
+            margin="normal"
+          />
         </Grid>
       </Grid>
     </Grid>
@@ -164,7 +158,12 @@ const GeneralProductForm = props => (
 );
 
 GeneralProductForm.propTypes = {
+  product: PropTypes.objectOf(PropTypes.string),
+  onChangeProduct: PropTypes.func,
+};
+GeneralProductForm.defaultProps = {
+  product: {},
+  onChangeProduct: () => {},
+};
 
-}
-
-export default GeneralProductForm
+export default GeneralProductForm;
