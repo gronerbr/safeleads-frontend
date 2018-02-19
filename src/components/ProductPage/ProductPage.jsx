@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import AppBar from 'material-ui/AppBar';
 import Tabs, { Tab } from 'material-ui/Tabs';
+import Card from 'material-ui/Card';
 import Button from 'material-ui/Button';
 import ChatIcon from 'material-ui-icons/Chat';
 import InsertPhotoIcon from 'material-ui-icons/InsertPhoto';
@@ -12,24 +13,22 @@ import MasterPage from '../MasterPage/MasterPage';
 import youtubeThumbnail from '../../utils/youtubeThumbnail';
 import ListImages from './ListImages';
 import ListVideos from './ListVideos';
+import GeneralProductForm from './GeneralProductForm';
 
 class ProductPage extends Component {
   static propTypes = {
     images: PropTypes.arrayOf(PropTypes.object),
     videos: PropTypes.arrayOf(PropTypes.object),
     getProduct: PropTypes.func,
-    match: PropTypes.objectOf(PropTypes.objectOf(PropTypes.integer)).isRequired,
+    match: PropTypes.objectOf(PropTypes.objectOf(PropTypes.integer)),
     product: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
     updateProduct: PropTypes.func,
     saveProduct: PropTypes.func,
   }
   static defaultProps = {
     images: [],
-    videos: [
-      {
-        thumbnail: '',
-      },
-    ],
+    videos: [],
+    match: { id: undefined },
     getProduct: () => {},
     saveProduct: () => {},
     updateProduct: () => {},
@@ -38,11 +37,18 @@ class ProductPage extends Component {
     super(props);
     this.state = {
       tabIndex: 0,
+      isProductAdition: false,
     };
   }
+  /*eslint-disable*/
   componentDidMount() {
     window.scrollTo(0, 0);
-    this.props.getProduct(this.props.match.params.id);
+    const param = parseInt(this.props.match.params.id);
+    if(isNaN(param)){
+      this.setState({isProductAdition: true});
+    } else {
+      this.props.getProduct(param);
+    }
   }
   addImage() {
     this.props.updateProduct({
@@ -123,6 +129,20 @@ class ProductPage extends Component {
       }),
     });
   }
+  handleChangeProduct(evt) {
+    const newProduct = Object.assign({}, this.props.product, {
+      [evt.target.name]: evt.target.value,
+    });
+    this.props.updateProduct(newProduct);
+  }
+
+  handleProductAddition() {
+    if(this.state.isProductAdition && !this.props.product.id) {
+      this.props.addProduct(this.props.product);
+    } else {
+      this.props.saveProduct(this.props.product);
+    }
+  }
   handleTabChange = (event, value) => {
     this.setState({ tabIndex: value });
   }
@@ -131,44 +151,57 @@ class ProductPage extends Component {
       <MasterPage>
         <div className={styles.base}>
           <h1 className={styles.title}>Produtos</h1>
-          <AppBar position="static">
-            <Tabs
-              value={this.state.value}
-              onChange={this.handleTabChange}
-              scrollable
-              scrollButtons="off"
-            >
-              <Tab label="Dados Gerais" icon={<ChatIcon />} />
-              <Tab label="Mídia" icon={<InsertPhotoIcon />} />
-              <Tab label="Anúncios" icon={<AdIcon />} />
-            </Tabs>
-          </AppBar>
-          {this.state.tabIndex === 0 && <div>Item One</div>}
-          {this.state.tabIndex === 1 &&
-            <Fragment>
-              <ListImages
-                list={this.props.images}
-                onAddImage={() => this.addImage()}
-                onUploadImg={(evt, index) => this.handleImgUpload(evt, index)}
-                onRemove={index => this.removeImage(index)}
-                onChangeItem={(evt, index, field) => this.handleImgChange(evt, index, field)}
-              />
-              <ListVideos
-                list={this.props.videos}
-                onAddVideo={() => this.addVideo()}
-                onRemove={index => this.removeVideo(index)}
-                onChangeItem={(evt, index, field) => this.handleVideoChange(evt, index, field)}
-              />
-            </Fragment>
-          }
-          {this.state.tabIndex === 2 && <div>Item Three</div>}
+          <Card>
+            <AppBar position="static">
+              <Tabs
+                value={this.state.value}
+                onChange={this.handleTabChange}
+                scrollable
+                scrollButtons="off"
+              >
+                <Tab label="Dados Gerais" icon={<ChatIcon />} />
+                <Tab label="Mídia" icon={<InsertPhotoIcon />} />
+                <Tab label="Anúncios" icon={<AdIcon />} />
+              </Tabs>
+            </AppBar>
+            <div className={styles.tabContentWrapper}>
+              <Fragment>
+                {this.state.tabIndex === 0 &&
+                  <GeneralProductForm
+                    product={this.props.product}
+                    onChangeProduct={evt => this.handleChangeProduct(evt)}
+                  />
+                }
+                {this.state.tabIndex === 1 &&
+                  <Fragment>
+                    <ListImages
+                      list={this.props.images}
+                      onAddImage={() => this.addImage()}
+                      onUploadImg={(evt, index) => this.handleImgUpload(evt, index)}
+                      onRemove={index => this.removeImage(index)}
+                      onChangeItem={(evt, index, field) => this.handleImgChange(evt, index, field)}
+                    />
+                    <ListVideos
+                      list={this.props.videos}
+                      onAddVideo={() => this.addVideo()}
+                      onRemove={index => this.removeVideo(index)}
+                      onChangeItem={
+                        (evt, index, field) => this.handleVideoChange(evt, index, field)
+                      }
+                    />
+                  </Fragment>
+                }
+                {this.state.tabIndex === 2 && <div>Item Three</div>}
+              </Fragment>
+            </div>
+          </Card>
         </div>
         <Button
-          fab
+          variant="fab"
           color="primary"
           aria-label="add"
           className={styles.saveBtn}
-          onClick={() => this.props.saveProduct(this.props.product)}
+          onClick={() => this.handleProductAddition() }
         >
           <SaveIcon />
         </Button>
