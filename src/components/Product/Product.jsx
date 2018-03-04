@@ -18,13 +18,13 @@ class Product extends Component {
     name: PropTypes.string.isRequired,
     delete: PropTypes.func.isRequired,
     year: PropTypes.string,
-    desc: PropTypes.string,
+    description: PropTypes.string,
     img: PropTypes.string,
   };
 
   static defaultProps = {
     year: '',
-    desc: '',
+    description: '',
     img: imgPlaceholder,
   };
 
@@ -97,7 +97,7 @@ class Product extends Component {
               {toBrl(this.props.price)}
             </Typography>
             <Typography className={styles.tal} component="p">
-              {this.props.desc}
+              {this.props.description}
             </Typography>
           </CardContent>
           <CardActions>
