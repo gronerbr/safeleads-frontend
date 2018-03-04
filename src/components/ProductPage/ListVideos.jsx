@@ -23,7 +23,7 @@ const ListVideos = props => (
           />
           <CardContent className={styles.itemDesc}>
             <Button
-              fab
+              variant="fab"
               color="primary"
               mini
               aria-label="remove"
@@ -76,8 +76,7 @@ const ListVideos = props => (
     ))}
     <Grid item xs={12} md={3} className={styles.addImgWrapper}>
       <Button
-        fab
-        color="secondary"
+        variant="fab"
         aria-label="add"
         onClick={() => props.onAddVideo()}
       >

@@ -113,9 +113,9 @@ class ProductList extends Component {
                   id={product.id}
                   img={product.images && product.images[0] && product.images[0].src}
                   name={product.name}
-                  year={product.year}
+                  year={product.fabricationYear && product.modelYear && `${product.fabricationYear}/${product.modelYear}`}
                   price={product.price}
-                  desc={product.desc}
+                  description={product.description}
                 />
               ))
             }
@@ -128,7 +128,7 @@ class ProductList extends Component {
         </div>
         <div className={styles.addBtn}>
           <Button
-            fab
+            variant="fab"
             color="primary"
             aria-label="add"
             onClick={() => this.openAdd()}
@@ -164,16 +164,14 @@ class ProductList extends Component {
                       margin="normal"
                       fullWidth
                     />
-                    <Checkbox
-                      id="keepAdding"
-                      defaultChecked={this.state.keepAdding}
-                      onChange={() => this.handleKeepAdding()}
-                    />
-                    { /* eslint-disable */ }
-                    <label htmlFor="keepadding">
+                    <label htmlFor="keepAdding">
+                      <Checkbox
+                        id="keepAdding"
+                        defaultChecked={this.state.keepAdding}
+                        onChange={() => this.handleKeepAdding()}
+                      />
                       Continuar adicionando
                     </label>
-                    { /* eslint-enable */ }
                   </form>
                 </CardContent>
                 <CardActions>
