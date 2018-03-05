@@ -5,18 +5,18 @@ exports[`Example:  renders without crashing 1`] = `
   <Header
     onToggleMenu={[Function]}
   />
-  <WithStyles(GridWrapper)
+  <WithStyles
     container={true}
     spacing={0}
   >
-    <WithStyles(GridWrapper)
+    <WithStyles
       item={true}
       md={2}
       xs={10}
     >
       <Sidebar />
-    </WithStyles(GridWrapper)>
-    <WithStyles(GridWrapper)
+    </WithStyles>
+    <WithStyles
       item={true}
       md={10}
       xs={2}
@@ -31,7 +31,7 @@ exports[`Example:  renders without crashing 1`] = `
           Copyright SafeLeads
         </div>
       </div>
-    </WithStyles(GridWrapper)>
-  </WithStyles(GridWrapper)>
+    </WithStyles>
+  </WithStyles>
 </React.Fragment>
 `;
